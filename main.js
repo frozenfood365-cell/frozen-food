@@ -16,7 +16,7 @@ if (typeof Swal === "undefined") {
 }
 
 // URL Google Apps Script Web App
-const API_URL = "https://script.google.com/macros/s/AKfycbz0MFal--q_Mfs3Wl3g1rrVVvZFwhIwvtTOgfoU480k0zv4jzEtj2WmoM8V23KtMRPQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbxEddvISbOu-71uVzACz-Qe6_UrTPA_Cw2oc5ReZwvMGj-xTr78DkuXU9WnCEDSpETv/exec";
 
 // Database Produk Frozen Food Premium (Bibah Frozen Food) - Data Produk Asli
 let PRODUCTS_DB = [
