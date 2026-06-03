@@ -1,0 +1,128 @@
+/* Premium Custom Styles for Bibah Frozen Food - Red & Bright Theme */
+:root {
+    --brand-red: #dc2626;         /* Red 600 */
+    --brand-red-dark: #991b1b;    /* Red 800 */
+    --brand-red-light: #fef2f2;   /* Red 50 */
+    --accent-orange: #f97316;     /* Orange 500 */
+    --accent-yellow: #f59e0b;     /* Amber 500 */
+    --text-dark: #1e293b;         /* Slate 800 */
+    --text-muted: #64748b;        /* Slate 500 */
+    --frost-glass: rgba(255, 255, 255, 0.75);
+    --frost-border: rgba(220, 38, 38, 0.15);
+}
+
+body {
+    font-family: 'Outfit', 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background: radial-gradient(circle at top right, #fff5f5 0%, #fffbfb 40%, #fef2f2 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--brand-red-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--brand-red);
+    border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-red-dark);
+}
+
+/* Bright Glassmorphism Navigation & Panels */
+.glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--frost-border);
+}
+
+.glass-frost {
+    background: var(--frost-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--frost-border);
+    box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.04);
+}
+
+/* Product Card Styling */
+.product-card {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.product-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--brand-red);
+    box-shadow: 0 25px 40px -15px rgba(220, 38, 38, 0.12);
+}
+
+/* Custom Buttons */
+.btn-primary-red {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25);
+}
+.btn-primary-red:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.35);
+}
+
+/* Promo Voucher Tag */
+.promo-badge {
+    position: relative;
+    overflow: hidden;
+}
+.promo-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: shine 4.5s infinite;
+}
+@keyframes shine {
+    0% { left: -100%; }
+    20% { left: 100%; }
+    100% { left: 100%; }
+}
+
+/* Hide scrollbars for tabs */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* SweetAlert2 Red Theme Override */
+.swal2-popup {
+    font-family: 'Outfit', sans-serif !important;
+    border-radius: 28px !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(220, 38, 38, 0.15) !important;
+    box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.1) !important;
+}
+.swal2-title {
+    font-weight: 800 !important;
+    color: var(--brand-red-dark) !important;
+}
+.swal2-confirm {
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%) !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    padding: 12px 30px !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.25) !important;
+}
+.swal2-cancel {
+    border-radius: 12px !important;
+    padding: 12px 30px !important;
+}

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Bibah Frozen Food - Toko Frozen Food Premium & Lezat</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;850&display=swap" rel="stylesheet">
+    
+    <!-- Compiled Tailwind CSS & Custom Styles -->
+    <link rel="stylesheet" href="output.css">
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- ScrollReveal CDN -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Header / Navbar (Light Glassmorphism) -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav shadow-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-redBrand to-red-500 flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition duration-300">
+                    <i class="fas fa-snowflake text-white text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl tracking-tight text-slate-800"><span class="text-redBrand">BIBAH</span> <span class="text-accentOrange">FROZEN</span></h1>
+                    <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-redBrand/75">Premium Quality Food</p>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8" id="nav-links">
+                <a href="#home" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-store text-xs"></i> Beranda</a>
+                <a href="#promo" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-ticket-alt text-xs text-amber-500 animate-bounce"></i> Promo</a>
+                <a href="#belanja" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-shopping-bag text-xs"></i> Belanja</a>
+                <a href="#keranjang" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-shopping-cart text-xs"></i> Keranjang</a>
+                <a href="#riwayat" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-history text-xs"></i> Riwayat</a>
+                <a href="#kontak" class="text-slate-700 hover:text-redBrand font-semibold text-sm transition duration-200 flex items-center gap-1.5"><i class="fas fa-phone-alt text-xs"></i> Kontak</a>
+            </nav>
+            
+            <div class="hidden md:block" id="nav-btn-wrapper">
+                <a href="#belanja" class="px-5 py-2.5 btn-primary-red font-bold text-sm rounded-xl transition duration-300 flex items-center gap-2">
+                    <i class="fas fa-shopping-basket"></i> Belanja Sekarang
+                </a>
+            </div>
+            
+            <button id="menu-btn" class="md:hidden text-slate-700 text-xl p-2 rounded-lg hover:bg-slate-100 transition active:scale-95 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-redBrand/10 px-4 py-4 space-y-2 shadow-2xl">
+            <a href="#home" class="mobile-link block text-slate-700 font-semibold p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-store mr-3 text-redBrand w-5"></i>Beranda</a>
+            <a href="#promo" class="mobile-link block text-slate-700 p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-ticket-alt mr-3 text-amber-500 w-5"></i>Promo</a>
+            <a href="#belanja" class="mobile-link block text-slate-700 p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-shopping-bag mr-3 text-redBrand w-5"></i>Belanja</a>
+            <a href="#keranjang" class="mobile-link block text-slate-700 p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-shopping-cart mr-3 text-redBrand w-5"></i>Keranjang</a>
+            <a href="#riwayat" class="mobile-link block text-slate-700 p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-history mr-3 text-redBrand w-5"></i>Riwayat</a>
+            <a href="#kontak" class="mobile-link block text-slate-700 p-2.5 rounded-xl hover:bg-redLight"><i class="fas fa-phone-alt mr-3 text-redBrand w-5"></i>Kontak</a>
+        </div>
+    </header>
+
+    <!-- Main Content Container (Contains Shop & Landing Views) -->
+    <div id="main-content">
+        <!-- Hero / Landing Section (Bright, Light Red to White Gradient) -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 bg-gradient-to-b from-redLight via-white to-white">
+            <!-- Floating Red Blobs -->
+            <div class="blob bg-red-100 w-96 h-96 top-10 left-10"></div>
+            <div class="blob bg-amber-100 w-80 h-80 bottom-10 right-10"></div>
+            
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+                <div class="inline-flex items-center gap-2 bg-redBrand/5 border border-redBrand/20 rounded-full px-4 py-1.5 mb-6 shadow-md backdrop-blur-md reveal-top">
+                    <i class="fas fa-snowflake text-redBrand animate-spin-slow"></i>
+                    <span class="text-redBrand text-[10px] sm:text-xs font-bold tracking-widest uppercase">Segar & Gurih - 100% Produk Premium</span>
+                </div>
+                
+                <h2 class="text-4xl sm:text-6xl md:text-7xl font-black text-slate-800 leading-tight reveal-top delay-100">
+                    Hidangan Instan,<br>
+                    Cita Rasa <span class="text-transparent bg-clip-text bg-gradient-to-r from-redBrand to-accentOrange">Istimewa & Lezat!</span>
+                </h2>
+                
+                <p class="text-sm sm:text-base md:text-lg text-slate-500 max-w-xl mx-auto mt-6 mb-10 font-light leading-relaxed reveal-top delay-200">
+                    Bibah Frozen Food menyediakan aneka Nugget Ayam, Sosis Sapi Bakar, Bakso Kuah Kenyal, Dimsum Hangat, dan Kentang Goreng impor premium. Higienis, praktis, dan hemat.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 reveal-top delay-300">
+                    <a href="#belanja" class="w-full sm:w-auto px-8 py-4 btn-primary-red font-bold rounded-2xl flex items-center justify-center gap-2 text-base">
+                        <span>Mulai Belanja</span>
+                        <i class="fas fa-shopping-bag text-xs"></i>
+                    </a>
+                    <a href="#promo" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-bold rounded-2xl transition duration-300 flex items-center justify-center gap-2 text-base shadow-sm">
+                        <span>Lihat Promo Hemat</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Voucher Section -->
+        <section id="promo" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="bg-redLight text-redBrand font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase px-4 py-1.5 rounded-full border border-redBrand/20">Spesial Voucher</span>
+                <h3 class="font-extrabold text-3xl sm:text-4xl text-slate-800 mt-4">Klaim Promo <span class="text-redBrand">Spesial</span> Bibah</h3>
+                <div class="w-20 h-1 bg-redBrand mx-auto mt-4 rounded-full"></div>
+                <p class="text-slate-500 max-w-xl mx-auto mt-4 text-xs sm:text-sm">Klik voucher di bawah untuk langsung menyalin dan menggunakannya pada kalkulator belanja Anda!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Voucher 1 -->
+                <div onclick="aplikasikanVoucherDanNotif('FROZENMANTAP')" class="bg-gradient-to-r from-redBrand to-red-500 rounded-3xl p-6 text-white shadow-red-glow flex flex-col sm:flex-row items-center justify-between gap-6 cursor-pointer transform hover:-translate-y-1 transition duration-300 promo-badge">
+                    <div class="space-y-2 text-center sm:text-left">
+                        <div class="inline-block bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Diskon 10%</div>
+                        <h4 class="font-extrabold text-2xl">FROZENMANTAP</h4>
+                        <p class="text-xs text-red-100">Diskon langsung 10% untuk semua produk belanjaan frozen food Anda.</p>
+                    </div>
+                    <div class="bg-white text-redBrand font-extrabold px-6 py-3 rounded-2xl text-sm shadow-md flex items-center gap-2 whitespace-nowrap">
+                        <i class="fas fa-copy"></i> Salin
+                    </div>
+                </div>
+
+                <!-- Voucher 2 -->
+                <div onclick="aplikasikanVoucherDanNotif('FREEONGKIR')" class="bg-gradient-to-r from-accentOrange to-amber-500 rounded-3xl p-6 text-white shadow-premium flex flex-col sm:flex-row items-center justify-between gap-6 cursor-pointer transform hover:-translate-y-1 transition duration-300 promo-badge">
+                    <div class="space-y-2 text-center sm:text-left">
+                        <div class="inline-block bg-white/20 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full uppercase">Gratis Ongkir</div>
+                        <h4 class="font-extrabold text-2xl">FREEONGKIR</h4>
+                        <p class="text-xs text-amber-50">Potongan ongkos kirim Rp 10.000 untuk opsi pengantaran Kurir Toko.</p>
+                    </div>
+                    <div class="bg-white text-accentOrange font-extrabold px-6 py-3 rounded-2xl text-sm shadow-md flex items-center gap-2 whitespace-nowrap">
+                        <i class="fas fa-truck"></i> Salin
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tampilan Belanja / Katalog (Cerah) -->
+        <section id="belanja" class="py-16 sm:py-24 bg-grayLight border-y border-slate-100 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-12">
+                    <span class="bg-redLight text-redBrand font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase px-4 py-1.5 rounded-full border border-redBrand/20">Katalog Belanja</span>
+                    <h3 class="font-extrabold text-3xl sm:text-4xl md:text-5xl text-slate-800 mt-4">Pilih Frozen Food <span class="text-redBrand">Kesukaanmu</span></h3>
+                    <div class="w-20 h-1.5 bg-redBrand mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <!-- Search & Filter Controls -->
+                <div class="max-w-4xl mx-auto mb-12 space-y-6">
+                    <!-- Search Bar -->
+                    <div class="relative group">
+                        <input type="text" id="search-input" onkeyup="filterCariProduk()" placeholder="Cari nugget keju, sosis jumbo, dimsum hangat..." class="w-full pl-12 pr-6 py-4 bg-white border border-slate-200 rounded-2xl focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition duration-200 font-semibold shadow-sm text-slate-700 placeholder:text-slate-400">
+                        <div class="absolute left-4 top-1/2 -translate-y-1/2 text-redBrand text-lg">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tabs Filter -->
+                    <div class="flex overflow-x-auto gap-2.5 pb-2 no-scrollbar justify-start md:justify-center whitespace-nowrap" id="tab-filter-container">
+                        <button onclick="filterKategoriProduk('semua', this)" class="px-6 py-3 bg-redBrand text-white rounded-2xl font-bold text-sm shadow-md transition duration-300">Semua</button>
+                        <button onclick="filterKategoriProduk('nugget_sosis', this)" class="px-6 py-3 bg-white text-slate-600 hover:text-slate-900 rounded-2xl font-bold text-sm shadow-sm transition duration-300 border border-slate-100">Nugget & Sosis</button>
+                        <button onclick="filterKategoriProduk('bakso_dimsum', this)" class="px-6 py-3 bg-white text-slate-600 hover:text-slate-900 rounded-2xl font-bold text-sm shadow-sm transition duration-300 border border-slate-100">Bakso & Dimsum</button>
+                        <button onclick="filterKategoriProduk('kentang_camilan', this)" class="px-6 py-3 bg-white text-slate-600 hover:text-slate-900 rounded-2xl font-bold text-sm shadow-sm transition duration-300 border border-slate-100">Kentang & Camilan</button>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8" id="product-grid">
+                    <!-- Cards will be injected dynamically by main.js -->
+                </div>
+                
+                <div id="no-products-found" class="hidden text-center py-20">
+                    <i class="fas fa-search text-5xl text-slate-300 mb-4 animate-bounce"></i>
+                    <p class="text-slate-400 font-bold">Produk frozen food yang Anda cari tidak ditemukan.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keranjang & Checkout Section -->
+        <section id="keranjang" class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="bg-redLight text-redBrand font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase px-4 py-1.5 rounded-full border border-redBrand/20">Kalkulator Pembelian</span>
+                <h3 class="font-extrabold text-3xl sm:text-4xl text-slate-800 mt-4"><i class="fas fa-shopping-cart text-redBrand"></i> Keranjang & Estimasi Checkout</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Cart Items List -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-premium">
+                    <h4 class="font-extrabold text-xl text-slate-800 mb-6 flex items-center justify-between">
+                        <span>Layanan/Produk Dipilih</span>
+                        <span id="cart-count" class="text-xs bg-redBrand text-white px-3 py-1 rounded-full font-bold">0 Item</span>
+                    </h4>
+                    
+                    <div id="cart-items" class="space-y-4 max-h-[450px] overflow-y-auto pr-1">
+                        <div class="text-center text-slate-400 py-20 text-sm">Keranjang belanja Anda masih kosong. Mari isi dengan frozen food lezat!</div>
+                    </div>
+
+                    <!-- Voucher Promo Input Area -->
+                    <div class="border-t border-slate-100 mt-8 pt-6">
+                        <label class="block text-slate-700 text-xs sm:text-sm font-bold mb-2"><i class="fas fa-ticket-alt text-amber-500 mr-1.5 animate-pulse"></i> Pakai Kode Voucher</label>
+                        <div class="flex gap-2">
+                            <input type="text" id="promo-input" placeholder="Masukkan kode promo (misal: FROZENMANTAP)" class="flex-grow border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-semibold text-slate-700 uppercase">
+                            <button type="button" onclick="prosesTerapkanPromo()" class="px-5 py-3 btn-primary-red font-bold text-sm rounded-xl">Gunakan</button>
+                        </div>
+                        <div id="promo-status" class="mt-2 text-xs font-semibold"></div>
+                    </div>
+                </div>
+
+                <!-- Right: Checkout Form -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-premium">
+                    <h4 class="font-extrabold text-xl text-slate-800 mb-6 flex items-center gap-2">
+                        <i class="fas fa-truck text-redBrand"></i> Opsi Pengiriman & Pembayaran
+                    </h4>
+                    
+                    <form id="checkout-form" class="space-y-5">
+                        <div>
+                            <label class="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5"><i class="fas fa-user mr-1.5 text-redBrand"></i> Nama Lengkap Pemesan</label>
+                            <input type="text" id="checkout-nama" placeholder="Tulis nama lengkap Anda" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-medium" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5"><i class="fas fa-phone mr-1.5 text-redBrand"></i> Nomor WhatsApp Aktif</label>
+                            <input type="tel" id="checkout-wa" placeholder="Contoh: 0882xxxxxxxx" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-medium" required>
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5"><i class="fas fa-motorcycle mr-1.5 text-redBrand"></i> Opsi Pengantaran</label>
+                            <div class="relative">
+                                <select id="checkout-metode" onchange="togglePengirimanLayout()" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-medium appearance-none cursor-pointer">
+                                    <option value="Ambil Sendiri">Ambil Sendiri di Outlet (Bebas Ongkir)</option>
+                                    <option value="Kurir Toko">Kirim ke Rumah via Kurir (+ Rp 10.000)</option>
+                                </select>
+                                <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+
+                        <div id="alamat-wrapper" class="hidden">
+                            <label class="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5"><i class="fas fa-map-marker-alt mr-1.5 text-redBrand"></i> Alamat Lengkap Pengiriman</label>
+                            <textarea id="checkout-alamat" placeholder="Tulis nama jalan, nomor rumah, RT/RW secara detail" rows="2.5" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-medium resize-none"></textarea>
+                        </div>
+
+                        <div>
+                            <label class="block text-slate-700 text-xs sm:text-sm font-semibold mb-1.5"><i class="fas fa-comment-dots mr-1.5 text-redBrand"></i> Catatan Khusus (Opsional)</label>
+                            <input type="text" id="checkout-catatan" placeholder="Contoh: Titip di satpam kosan jika saya tidak ada" class="w-full border border-slate-200 rounded-xl px-4 py-3 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition font-medium">
+                        </div>
+
+                        <!-- Receipt Summary -->
+                        <div class="bg-redLight/40 border border-redBrand/5 rounded-2xl p-4 mt-6 space-y-3 font-semibold text-xs sm:text-sm text-slate-600">
+                            <div class="flex justify-between">
+                                <span>Subtotal Belanja:</span>
+                                <span id="summary-subtotal" class="text-slate-800">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between hidden" id="summary-ongkir-row">
+                                <span>Biaya Ongkos Kirim:</span>
+                                <span id="summary-ongkir" class="text-slate-800">Rp 10.000</span>
+                            </div>
+                            <div class="flex justify-between text-emerald-600 hidden" id="summary-diskon-row">
+                                <span>Potongan Diskon (<span id="summary-diskon-code">-</span>):</span>
+                                <span>- Rp <span id="summary-diskon">0</span></span>
+                            </div>
+                            <div class="border-t border-redBrand/10 pt-3 flex justify-between text-base font-extrabold text-slate-900">
+                                <span>Total Pembayaran:</span>
+                                <span id="cart-total" class="text-redBrand">Rp 0</span>
+                            </div>
+                        </div>
+
+                        <!-- Checkout Button (Triggers QRIS in-app page modal) -->
+                        <button type="button" onclick="checkoutPemesanan()" id="checkout-btn" class="w-full bg-slate-800 hover:bg-redBrand text-white font-extrabold py-4 rounded-xl transition duration-300 flex items-center justify-center gap-2 shadow-lg active:scale-98">
+                            <i class="fas fa-receipt text-lg"></i> Proses Pembayaran QRIS
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Riwayat Transaksi Section (Bright & Responsive) -->
+        <section id="riwayat" class="py-16 sm:py-24 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <span class="bg-redLight text-redBrand font-bold tracking-[0.2em] text-[10px] sm:text-xs uppercase px-4 py-1.5 rounded-full border border-redBrand/20">Live Database</span>
+                    <h3 class="font-extrabold text-3xl sm:text-4xl text-slate-800 mt-4"><i class="fas fa-history text-redBrand mr-1.5"></i> Riwayat Transaksi Terbaru</h3>
+                    <div class="w-20 h-1 bg-redBrand mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="bg-white rounded-3xl border border-slate-100 shadow-premium p-4 sm:p-8 relative">
+                    <div id="loading-riwayat" class="hidden absolute inset-0 z-20 flex flex-col items-center justify-center bg-white/80 backdrop-blur-sm rounded-3xl">
+                        <div class="relative">
+                            <div class="w-12 h-12 border-4 border-slate-100 rounded-full"></div>
+                            <div class="w-12 h-12 border-4 border-redBrand border-t-transparent rounded-full animate-spin absolute top-0 left-0"></div>
+                        </div>
+                        <p class="mt-4 text-xs font-bold uppercase tracking-widest text-slate-500 animate-pulse">Menghubungkan Database...</p>
+                    </div>
+
+                    <div class="overflow-x-auto rounded-xl">
+                        <table class="w-full min-w-[750px] border-collapse text-left">
+                            <thead>
+                                <tr class="border-b border-slate-150 text-slate-400 text-xs font-bold uppercase tracking-wider bg-slate-50">
+                                    <th class="py-4 px-4 w-[15%]">Tanggal</th>
+                                    <th class="py-4 px-4 w-[15%]">ID Invoice</th>
+                                    <th class="py-4 px-4 w-[20%]">Nama Pelanggan</th>
+                                    <th class="py-4 px-4 w-[25%]">Detail Belanjaan</th>
+                                    <th class="py-4 px-4 w-[12%]">Metode</th>
+                                    <th class="py-4 px-4 text-right w-[13%]">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="riwayat-table-body" class="text-xs sm:text-sm divide-y divide-slate-100 font-semibold text-slate-700">
+                                <!-- Data will be dynamically rendered here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="riwayat-empty" class="hidden text-center py-16">
+                        <i class="fas fa-box-open text-5xl text-slate-200 mb-4 animate-bounce"></i>
+                        <p class="text-slate-400 font-bold">Belum ada transaksi terekam di database spreadsheet.</p>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div id="pagination-controls" class="flex justify-between items-center mt-6 pt-6 border-t border-slate-100 flex-wrap gap-4">
+                        <!-- Injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kritik & Saran Section (Bright, Light Coral/Red background) -->
+        <section id="kontak" class="py-16 sm:py-24 bg-redLight/50 border-t border-redBrand/10 text-slate-800 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-redBrand/5 border border-redBrand/20 rounded-full px-4 py-1.5 shadow-sm">
+                            <i class="fas fa-phone-alt text-redBrand animate-pulse"></i>
+                            <span class="text-redBrand text-[10px] font-bold tracking-widest uppercase">Hubungi Toko</span>
+                        </div>
+                        <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-800">Ada Pertanyaan? Admin Kami Siap Melayani</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed font-light">
+                            Melayani pembelian retail, grosir, katering, kemitraan reseller frozen food di area Gunungpati dan Semarang.
+                        </p>
+                        <div class="space-y-4 text-xs sm:text-sm text-slate-600">
+                            <div class="flex items-center gap-3"><i class="fab fa-whatsapp text-redBrand text-lg"></i> <span>CS 1 (Reseller / Retail): +62 815-7588-4184</span></div>
+                            <div class="flex items-center gap-3"><i class="fas fa-clock text-redBrand text-lg"></i> <span>Operasional: Senin - Sabtu, 08.00 - 20.00 WIB</span></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-redBrand text-lg mt-0.5"></i> <span>Outlet Bibah Frozen Food, Gunungpati, Semarang</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Critique Form -->
+                    <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-100 shadow-premium relative z-10">
+                        <h4 class="font-bold text-lg mb-4 text-slate-800"><i class="fas fa-envelope-open-text text-redBrand mr-2"></i> Kirim Kritik & Saran</h4>
+                        <form id="saran-form" class="space-y-4">
+                            <div>
+                                <input type="text" id="saran-nama" placeholder="Tulis nama Anda" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition text-slate-800 font-medium" required>
+                            </div>
+                            <div>
+                                <textarea id="saran-pesan" rows="3.5" placeholder="Tulis masukan, kritik konstruktif, atau usulan menu baru di sini..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3.5 text-sm focus:border-redBrand focus:ring-4 focus:ring-redBrand/10 outline-none transition text-slate-800 font-medium resize-none" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full btn-primary-red font-bold py-3.5 rounded-xl flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp"></i> Kirim via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- IN-APP RESPONSIVE INVOICE & QRIS PAYMENT MODAL -->
+    <div id="invoice-payment-modal" class="fixed inset-0 z-[9999] hidden flex items-center justify-center p-3 sm:p-6 md:p-10 overflow-y-auto">
+        <!-- Backdrop blur overlay -->
+        <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-md transition-opacity" onclick="kembaliKeToko()"></div>
+        
+        <!-- Modal content container (Frosted Glass cerah) -->
+        <div class="relative bg-white/95 border border-redBrand/10 w-full max-w-4xl rounded-3xl shadow-2xl overflow-hidden max-h-[90vh] flex flex-col z-10 animate-fade-up">
+            
+            <!-- Modal Header -->
+            <div class="p-5 sm:p-6 border-b border-slate-100 flex justify-between items-center bg-white sticky top-0 z-20">
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-800 flex items-center gap-2"><i class="fas fa-file-invoice-dollar text-redBrand"></i> Invoice & Pembayaran</h3>
+                    <p class="text-xs text-slate-400 font-bold mt-1">ID Invoice: <span id="payment-invoice-id" class="text-redBrand">BBF-XXXXXXXX</span></p>
+                </div>
+                <button onclick="kembaliKeToko()" class="w-9 h-9 rounded-xl bg-slate-50 hover:bg-redLight hover:text-redBrand transition flex items-center justify-center text-slate-400 shadow-sm" aria-label="Tutup Modal">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body (Scrollable for mobile support!) -->
+            <div class="p-5 sm:p-6 overflow-y-auto flex-grow space-y-6 no-scrollbar">
+                
+                <!-- Modal Checkout View -->
+                <div id="payment-modal-checkout-view" class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                    
+                    <!-- Left: Invoice Breakdown & Info -->
+                    <div class="md:col-span-4 space-y-5">
+                        
+                        <!-- Customer details -->
+                        <div class="border-b border-slate-100 pb-3">
+                            <h4 class="font-extrabold text-xs sm:text-sm text-slate-800 mb-2.5"><i class="fas fa-user-tag text-redBrand mr-1.5"></i> Detail Pelanggan</h4>
+                            <div class="grid grid-cols-2 gap-y-1.5 text-[10px] sm:text-xs font-semibold">
+                                <span class="text-slate-400">Nama Lengkap:</span>
+                                <span id="invoice-penerima" class="text-slate-800 text-right">-</span>
+                                <span class="text-slate-400">No. WhatsApp:</span>
+                                <span id="invoice-wa" class="text-slate-800 text-right">-</span>
+                                <span class="text-slate-400">Metode Pengiriman:</span>
+                                <span id="invoice-metode" class="text-slate-800 text-right">-</span>
+                                <span class="text-slate-400">Alamat Lengkap:</span>
+                                <span id="invoice-alamat" class="text-slate-800 text-right leading-relaxed max-w-[150px] justify-self-end">-</span>
+                                <span class="text-slate-400">Catatan Khusus:</span>
+                                <span id="invoice-catatan" class="text-slate-800 text-right">-</span>
+                            </div>
+                        </div>
+
+                        <!-- Table of products -->
+                        <div>
+                            <h4 class="font-extrabold text-xs sm:text-sm text-slate-800 mb-2"><i class="fas fa-receipt text-redBrand mr-1.5"></i> Rincian Belanjaan</h4>
+                            <div class="overflow-x-auto rounded-xl border border-slate-100">
+                                <table class="w-full text-left text-[10px] sm:text-xs">
+                                    <thead>
+                                        <tr class="bg-slate-50 text-slate-400 font-bold uppercase tracking-wider border-b border-slate-100">
+                                            <th class="py-2 px-3">Produk</th>
+                                            <th class="py-2 px-3 text-center">Jumlah</th>
+                                            <th class="py-2 px-3 text-right">Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="invoice-items-body" class="divide-y divide-slate-100 text-slate-700 font-semibold">
+                                        <!-- Injected by JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Price Breakdown -->
+                        <div class="bg-slate-50 rounded-2xl p-3.5 space-y-2 font-semibold text-[10px] sm:text-xs text-slate-600">
+                            <div class="flex justify-between">
+                                <span>Subtotal Produk:</span>
+                                <span id="invoice-subtotal" class="text-slate-800">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between" id="invoice-ongkir-row">
+                                <span>Biaya Ongkos Kirim:</span>
+                                <span id="invoice-ongkir" class="text-slate-800">Rp 0</span>
+                            </div>
+                            <div class="flex justify-between text-emerald-600 hidden" id="invoice-diskon-row">
+                                <span>Diskon Voucher (<span id="invoice-diskon-code">-</span>):</span>
+                                <span>- Rp <span id="invoice-diskon">0</span></span>
+                            </div>
+                            <div class="border-t border-slate-200 pt-2.5 flex justify-between text-xs sm:text-sm font-extrabold text-slate-900">
+                                <span>Total Tagihan:</span>
+                                <span id="invoice-total" class="text-redBrand">Rp 0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: QRIS scan block & instructions -->
+                    <div class="md:col-span-8 flex flex-col items-center border-t md:border-t-0 border-slate-100 pt-6 md:pt-0">
+                        <div class="w-full flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+                            <span class="font-extrabold text-slate-700 text-xs sm:text-sm"><i class="fas fa-qrcode text-redBrand mr-1"></i> Scan QRIS</span>
+                            <!-- Custom countdown timer -->
+                            <div class="flex items-center gap-1 bg-redLight text-redBrand border border-redBrand/20 px-2.5 py-0.5 rounded-full text-xs font-black animate-pulse">
+                                <i class="fas fa-clock"></i>
+                                <span id="payment-timer">05:00</span>
+                            </div>
+                        </div>
+
+                        <!-- QR code image -->
+                        <div class="flex justify-center bg-white p-3 rounded-2xl border border-redBrand/10 shadow-inner w-full max-w-[300px] md:max-w-[370px] aspect-square items-center mb-4">
+                            <img src="QRIS.jpeg" id="payment-qr-image" alt="QRIS Code" class="w-full h-full object-contain rounded-xl">
+                        </div>
+
+                        <div class="w-full text-[10px] sm:text-xs text-slate-500 font-medium space-y-1 mb-4">
+                            <p class="font-bold text-slate-700 text-xs mb-1">Panduan Transfer QRIS:</p>
+                            <p>1. Buka aplikasi E-Wallet (Dana, OVO, GoPay) atau m-Banking Anda.</p>
+                            <p>2. Lakukan scan QR Code di atas dan masukkan nominal pembayaran sesuai total tagihan.</p>
+                            <p>3. Tekan tombol **"Kirim Bukti Pembayaran via WhatsApp"** untuk mengirimkan bukti bayar dan memvalidasi pesanan Anda.</p>
+                        </div>
+
+                        <!-- Warning Alert in scan view -->
+                        <div class="w-full bg-rose-50 border border-rose-100 rounded-2xl p-3.5 text-[10px] sm:text-xs text-rose-800 font-semibold mb-4 flex items-start gap-3">
+                            <span class="text-lg">🚨</span>
+                            <div class="text-left">
+                                <p class="font-extrabold text-rose-900 mb-0.5">Wajib Sertakan Bukti Transfer!</p>
+                                <p class="leading-relaxed font-medium">Setelah menekan tombol di bawah, Anda wajib <strong>melampirkan screenshot/foto bukti transfer asli</strong> Anda pada chat WhatsApp yang terbuka agar pesanan disetujui.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full space-y-2.5">
+                            <button type="button" onclick="cekStatusPembayaran()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3.5 rounded-xl transition duration-300 flex items-center justify-center gap-2 shadow-md text-xs sm:text-sm">
+                                <i class="fab fa-whatsapp text-lg" id="btn-status-spinner"></i> <span id="btn-status-text">Kirim Bukti Pembayaran via WhatsApp</span>
+                            </button>
+                            <button type="button" onclick="kembaliKeToko()" class="w-full bg-redLight hover:bg-redBrand/10 text-redBrand font-extrabold py-3 rounded-xl transition duration-300 flex items-center justify-center gap-1.5 text-xs sm:text-sm">
+                                <i class="fas fa-times-circle"></i> Batal & Kembali
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <!-- Modal Success Receipt View (Hidden by default) -->
+                <div id="payment-modal-success-view" class="hidden py-8 px-4 flex flex-col items-center justify-center text-center space-y-6 animate-fade-up">
+                    <!-- Checkmark Icon -->
+                    <div class="w-20 h-20 bg-emerald-50 border-2 border-emerald-200 rounded-full flex items-center justify-center shadow-lg shadow-emerald-100 animate-bounce">
+                        <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <h3 class="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight">PEMBAYARAN BERHASIL! 🎉</h3>
+                        <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Transaksi Anda Telah Lunas & Terverifikasi</p>
+                    </div>
+                    
+                    <!-- Queue Number Card -->
+                    <div class="bg-redLight/80 border border-redBrand/15 rounded-3xl p-6 w-full max-w-sm space-y-2 shadow-sm">
+                        <p class="text-[10px] text-slate-400 font-black uppercase tracking-[0.25em]">Nomor Antrian Pengambilan</p>
+                        <h4 id="success-queue-id" class="text-5xl font-black text-redBrand tracking-tight font-mono">BFF-8801</h4>
+                        <span id="success-status-badge" class="inline-block bg-emerald-100 text-emerald-700 text-[10px] font-black uppercase tracking-wider px-3.5 py-1 rounded-full mt-2">Siap Diambil di Outlet</span>
+                    </div>
+                    
+                    <!-- Instructions Alert -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-left text-xs sm:text-sm text-slate-600 max-w-md w-full flex items-start gap-4">
+                        <span class="text-2xl mt-0.5">🏪</span>
+                        <div class="space-y-1">
+                            <p class="font-extrabold text-slate-800">Petunjuk Pengambilan:</p>
+                            <p id="success-instruction-text" class="font-medium leading-relaxed">
+                                Silakan tunjukkan nomor antrian di atas ke kasir outlet Bibah Frozen Food (Gunungpati, Semarang) untuk mengambil pesanan Anda tanpa perlu mengantre.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Short Info Summary -->
+                    <div class="w-full max-w-sm border-t border-slate-100 pt-4 text-xs font-semibold text-slate-500 space-y-2">
+                        <div class="flex justify-between">
+                            <span>Invoice ID:</span>
+                            <span id="success-invoice-id" class="text-slate-800 font-bold">-</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Nama Pemesan:</span>
+                            <span id="success-penerima" class="text-slate-800 font-bold">-</span>
+                        </div>
+                        <div class="flex justify-between border-t border-slate-100 pt-2 text-sm">
+                            <span class="font-bold text-slate-700">Total Pembayaran:</span>
+                            <span id="success-total" class="text-redBrand font-black">-</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Action button -->
+                    <div class="w-full max-w-xs pt-4">
+                        <button type="button" onclick="selesaiBelanjaDanTutup()" class="w-full btn-primary-red font-extrabold py-3.5 rounded-xl transition duration-300 shadow-red-glow text-sm">
+                            Selesai & Belanja Lagi
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer (Bright/Light Pink-Red Background, no black!) -->
+    <footer class="bg-redLight/80 text-slate-600 pt-16 pb-8 border-t-4 border-redBrand relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 pb-12 border-b border-redBrand/10">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <a href="#home" class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-redBrand to-red-500 flex items-center justify-center shadow-lg transform group-hover:rotate-12 transition duration-300">
+                            <i class="fas fa-snowflake text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-lg text-slate-800"><span class="text-redBrand">BIBAH</span> <span class="text-accentOrange">FROZEN</span></h3>
+                            <p class="text-[9px] font-bold uppercase tracking-[0.25em] text-redBrand/75">Premium Frozen Food</p>
+                        </div>
+                    </a>
+                    <p class="text-xs sm:text-sm text-slate-500 font-light leading-relaxed max-w-sm">
+                        Layanan ritel Frozen Food tepercaya. Menjual aneka nugget krispi, sosis lezat, bakso urat, dimsum kukus, dan kentang goreng premium dalam kondisi beku higienis.
+                    </p>
+                    <div class="flex items-center gap-3 pt-2">
+                        <a href="https://wa.me/6281575884184" target="_blank" class="w-8 h-8 rounded-lg bg-white hover:bg-redBrand hover:text-white flex items-center justify-center text-sm text-slate-600 transition duration-300 shadow"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-4 md:pl-8">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-800 border-l-2 border-redBrand pl-2">Menu Navigasi</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm" id="footer-nav">
+                        <li><a href="#home" class="hover:text-redBrand transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-redBrand/50"></i> Beranda</a></li>
+                        <li><a href="#promo" class="hover:text-redBrand transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-redBrand/50"></i> Promo Voucher</a></li>
+                        <li><a href="#belanja" class="hover:text-redBrand transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-redBrand/50"></i> Katalog Belanja</a></li>
+                        <li><a href="#keranjang" class="hover:text-redBrand transition flex items-center gap-2"><i class="fas fa-chevron-right text-[10px] text-redBrand/50"></i> Keranjang</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-800 border-l-2 border-redBrand pl-2">Jam Layanan Delivery</h4>
+                    <div class="space-y-3 text-xs sm:text-sm text-slate-500">
+                        <div class="flex items-start gap-3 bg-white/50 p-3 rounded-xl border border-redBrand/10">
+                            <i class="fas fa-clock text-redBrand mt-0.5"></i>
+                            <div>
+                                <p class="font-medium text-slate-800 text-xs">Senin - Sabtu</p>
+                                <p class="text-xs text-slate-500 font-light mt-0.5">08:00 WIB - 20:00 WIB</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-1">
+                            <i class="fas fa-calendar-times text-rose-500 mt-0.5"></i>
+                            <div>
+                                <p class="font-medium text-slate-700 text-xs">Minggu & Libur Nasional</p>
+                                <p class="text-xs text-slate-500 font-light mt-0.5">Tutup (Pengantaran Libur)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-4 text-xs font-semibold text-slate-500">
+                <p>
+                    &copy; 2026 <span class="text-slate-700 font-bold">Bibah Frozen Food Premium</span> — Hak Cipta Dilindungi.
+                </p>
+                <p class="font-light flex items-center gap-1">
+                    Crafted with <i class="fas fa-heart text-redBrand animate-pulse mx-0.5"></i> by <span class="text-redBrand font-semibold">Achmad Shofi Zakaria</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Controller Script -->
+    <script src="main.js"></script>
+    <script>
+        // Toggle mobile navigation menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Hide mobile menu on clicking any navigation link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

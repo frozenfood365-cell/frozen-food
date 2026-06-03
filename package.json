@@ -1,0 +1,13 @@
+{
+  "name": "bibah-frozen-food",
+  "version": "1.0.0",
+  "description": "Toko Frozen Food Premium & Lezat",
+  "main": "main.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./output.css",
+    "watch:css": "tailwindcss -i ./input.css -o ./output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
