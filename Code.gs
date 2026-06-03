@@ -189,14 +189,38 @@ function initSheets() {
 // Menyuntikkan produk sampel secara otomatis jika sheet kosong
 function insertSampleProducts(sheet) {
   var samples = [
-    ["nugget-01", "Chicken Nugget Bubble Crumb", "nugget_sosis", "Nugget dada ayam premium berlapis tepung bubble crumbs yang renyah & gurih.", 38000, "500g", "https://images.unsplash.com/photo-1562967916-eb82221dfb92?q=80&w=600&auto=format&fit=crop", "Terlaris"],
-    ["sosis-02", "Smoked Beef Sausage Premium", "nugget_sosis", "Sosis daging sapi dengan aroma asap premium alami, tebal & bertekstur kenyal.", 42000, "450g", "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop", "Diskon 10%"],
-    ["bakso-03", "Bakso Sapi Urat Istimewa", "bakso_dimsum", "Bakso daging sapi urat asli dengan kuah kaldunya yang mantap & gurih kenyal.", 35000, "500g", "https://images.unsplash.com/photo-1529042410759-befb1204b468?q=80&w=600&auto=format&fit=crop", "Terfavorit"],
-    ["dimsum-04", "Dimsum Ayam Mentai Mozzarella", "bakso_dimsum", "Dimsum ayam lembut disiram saus mentai gurih bertabur keju mozzarella premium lumer.", 28000, "8 Pcs", "https://images.unsplash.com/photo-1563245372-f21724e3856d?q=80&w=600&auto=format&fit=crop", "Rekomendasi"],
-    ["kentang-05", "French Fries Shoestring Impor", "kentang_camilan", "Kentang goreng stik impor kualitas restoran cepat saji, renyah di luar lembut di dalam.", 29000, "1 Kg", "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?q=80&w=600&auto=format&fit=crop", "Hemat"],
-    ["camilan-06", "Cireng Rujak Salju Crispy", "kentang_camilan", "Cireng putih salju renyah garing dengan bumbu rujak pedas manis asam yang segar.", 18000, "500g", "https://images.unsplash.com/photo-1626132647523-66f5bf380027?q=80&w=600&auto=format&fit=crop", ""],
-    ["nugget-07", "Chicken Nugget Cheese Lumer", "nugget_sosis", "Nugget daging ayam premium dengan isian keju lumer yang meleleh saat digigit.", 40000, "400g", "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?q=80&w=600&auto=format&fit=crop", "Terbaru"],
-    ["dimsum-08", "Dimsum Udang Hakau Lembut", "bakso_dimsum", "Hakau kulit transparan kenyal isi udang utuh segar, juicy & kaya rasa.", 32000, "6 Pcs", "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?q=80&w=600&auto=format&fit=crop", "Istimewa"]
+    ['yona-crispy-nuggets', 'Yona Crispy Chicken Nuggets', 'nugget_sosis', 'Nugget ayam krispi renyah dari Yona, cocok untuk lauk dan camilan keluarga.', 36000, '500g', 'produk/yona-crispy-chicken-nuggets.webp', 'Terlaris'],
+    ['asimo-naget-ayam', 'Asimo Naget Ayam', 'nugget_sosis', 'Chicken nugget Asimo 500g, bertekstur lembut di dalam dan renyah di luar.', 27000, '500g', 'produk/asimo-naget-ayam.webp', ''],
+    ['oye-klasik-naget', 'Oye Klasik Naget Ayam', 'nugget_sosis', 'Naget ayam klasik Oye, asli dagingnya mantab rasanya. Sudah dimasak, tinggal goreng.', 30000, '500g', 'produk/oye-klasik-naget-ayam.webp', ''],
+    ['kanzler-crispy-stick', 'Kanzler Crispy Chicken Nugget Stick', 'nugget_sosis', 'Nugget ayam crispy bentuk stik dari Kanzler, extra meaty dengan bubble crumb premium.', 45000, '450g', 'produk/kanzler-crispy-chicken-nugget-stick.webp', 'Premium'],
+    ['hemato-naget-kombinasi', 'Hemato Naget Ayam Kombinasi Reguler', 'nugget_sosis', 'Naget ayam kombinasi reguler dari Hemato, pilihan hemat untuk keluarga.', 25000, '500g', 'produk/hemato-naget-ayam-kombinasi.webp', ''],
+    ['richeese-naget-bubble', 'Richeese Factory Naget Ayam Bubble Crumb', 'nugget_sosis', 'Naget ayam crispy bubble crumb dari Richeese Factory, daging ayam pilihan harga ekonomis.', 32000, '450g', 'produk/richeese-naget-bubble-crumb.webp', 'Rekomendasi'],
+    ['salam-chicken-nugget', 'Salam Chicken Nugget', 'nugget_sosis', 'Naget ayam kombinasi dari PBS Salam, renyah dan gurih cocok untuk segala usia.', 26000, '500g', 'produk/salam-chicken-nugget.webp', ''],
+    ['hemato-naget-ayam', 'Hemato Naget Ayam', 'nugget_sosis', 'Naget ayam klasik Hemato, renyah di luar lembut di dalam. Simpan beku -12°C.', 28000, '500g', 'produk/hemato-naget-ayam.webp', ''],
+    ['fiesta-crispy-bubble', 'Fiesta Crispy Bubble', 'nugget_sosis', 'Naget ayam krispi bubble crumb dari Fiesta, extra meaty maximum crispiness.', 38000, '400g', 'produk/fiesta-crispy-bubble.webp', 'Terfavorit'],
+    ['fiesta-chicken-nugget', 'Fiesta Chicken Nugget', 'nugget_sosis', 'Naget ayam Fiesta signature recipe, extra meaty juicy inside. Siap masak.', 37000, '400g', 'produk/fiesta-chicken-nugget.webp', 'Terlaris'],
+    ['champ-chicken-nugget', 'Champ Chicken Nugget', 'nugget_sosis', 'Naget ayam kombinasi dari Champ, siap masak dan cocok untuk anak-anak.', 35000, '450g', 'produk/champ-chicken-nugget.webp', ''],
+    ['kanzler-crispy-nugget', 'Kanzler Crispy Chicken Nugget', 'nugget_sosis', 'Nugget ayam crispy premium Kanzler dengan bubble crumb coating, extra meaty.', 44000, '450g', 'produk/kanzler-crispy-chicken-nugget.webp', 'Premium'],
+    ['kanzler-nugget-spicy', 'Kanzler Crispy Chicken Nugget Spicy', 'nugget_sosis', 'Nugget ayam crispy pedas Kanzler dengan bubble crumb, sensasi spicy menggigit!', 45000, '450g', 'produk/kanzler-crispy-chicken-nugget-spicy.webp', 'Pedas'],
+    ['kanzler-nugget-original', 'Kanzler Chicken Nugget Original', 'nugget_sosis', 'Nugget ayam original Kanzler premium quality, extra meaty extra 3 pcs!', 46000, '450g', 'produk/kanzler-chicken-nugget-original.webp', 'Premium'],
+    ['uenaaak-nugget-coin', 'Uenaaak Nugget Coin by Belfoods', 'nugget_sosis', 'Naget ayam kombinasi bentuk koin dari Belfoods, daging ayam pilihan rasa lebih uenaaak!', 29000, '500g', 'produk/uenaaak-nugget-coin.webp', ''],
+    ['hemato-naget-mix', 'Hemato Naget Ayam Kombinasi Mix', 'nugget_sosis', 'Naget ayam kombinasi bentuk mix dari Hemato, berbagai bentuk dalam satu kemasan.', 26000, '500g', 'produk/hemato-naget-ayam-kombinasi-mix.webp', ''],
+    ['okey-naget-ayam', 'Okey Naget Ayam', 'nugget_sosis', 'Naget ayam kombinasi dari Okey, simpan beku keep frozen -18°C.', 24000, '500g', 'produk/okey-naget-ayam.webp', ''],
+    ['oye-stik-naget', 'Oye Stik Naget Ayam', 'nugget_sosis', 'Naget ayam bentuk stik dari Oye, asli dagingnya mantab rasanya. Sudah dimasak.', 31000, '500g', 'produk/oye-stik-naget-ayam.webp', ''],
+    ['okey-stik-naget', 'Okey Stik Naget Ayam', 'nugget_sosis', 'Naget ayam kombinasi bentuk stik dari Okey, simpan beku -18°C.', 25000, '500g', 'produk/okey-stik-naget-ayam.webp', ''],
+    ['fiesta-stikie', 'Fiesta Stikie Naget Ayam', 'nugget_sosis', 'Naget ayam bentuk stik dari Fiesta, crunchy outside juicy inside extra meaty.', 37000, '400g', 'produk/fiesta-stikie.webp', ''],
+    ['champ-nugget-stick', 'Champ Chicken Nugget Stick', 'nugget_sosis', 'Naget ayam kombinasi bentuk stik dari Champ, siap masak simpan beku -18°C.', 34000, '450g', 'produk/champ-chicken-nugget-stick.webp', ''],
+    ['fiesta-nugget-pizzabo', 'Fiesta Nugget Pizzabo ABC', 'kentang_camilan', 'Naget ayam bentuk huruf ABC rasa pizza dari Fiesta, favorit anak-anak!', 36000, '400g', 'produk/fiesta-nugget-pizzabo.webp', 'Kids'],
+    ['oye-funny-naget', 'Oye Funny Naget Ayam', 'kentang_camilan', 'Naget ayam bentuk lucu dari Oye, mantab rasanya cocok untuk camilan anak.', 30000, '500g', 'produk/oye-funny-naget-ayam.webp', 'Kids'],
+    ['champ-nugget-abc', 'Champ Chicken Nugget ABC', 'kentang_camilan', 'Naget ayam kombinasi bentuk abjad ABC dari Champ, siap masak favorit si kecil!', 34000, '450g', 'produk/champ-chicken-nugget-abc.webp', 'Kids'],
+    ['fiesta-nugget-dino', 'Fiesta Nugget Dino', 'kentang_camilan', 'Naget ayam bentuk dinosaurus lucu dari Fiesta, cute dino shape yummy!', 36000, '400g', 'produk/fiesta-nugget-dino.webp', 'Kids'],
+    ['oye-koin-naget', 'Oye Koin Naget Ayam', 'kentang_camilan', 'Naget ayam bentuk koin lucu dari Oye, asli dagingnya mantab rasanya.', 30000, '500g', 'produk/oye-koin-naget-ayam.webp', 'Kids'],
+    ['champ-crunchy-nugget', 'Champ Crunchy Nugget', 'nugget_sosis', 'Naget ayam kombinasi renyah dari Champ edisi BoBoiBoy, simpan beku -18°C.', 35000, '450g', 'produk/champ-crunchy-nugget.webp', ''],
+    ['fiesta-pok-pok', 'Fiesta Pok-Pok', 'bakso_dimsum', 'Daging ayam olahan bite-size dari Fiesta, great taste siap masak ready to cook.', 35000, '400g', 'produk/fiesta-pok-pok.webp', 'Rekomendasi'],
+    ['fiesta-spicy-wing', 'Fiesta Spicy Wing', 'bakso_dimsum', 'Sayap ayam dengan bumbu pedas dari Fiesta, selected seasoning juicy inside.', 40000, '400g', 'produk/fiesta-spicy-wing.webp', 'Pedas'],
+    ['fiesta-crispy-crunch', 'Fiesta Crispy Crunch', 'bakso_dimsum', 'Kulit ayam goreng crispy crunch dari Fiesta, tasty snack flavorful!', 30000, '300g', 'produk/fiesta-crispy-crunch.webp', ''],
+    ['fiesta-spicy-chick', 'Fiesta Spicy Chick', 'bakso_dimsum', 'Daging ayam dengan bumbu pedas spesial dari Fiesta, specially seasoned juicy inside.', 38000, '400g', 'produk/fiesta-spicy-chick.webp', 'Pedas'],
+    ['fiesta-karage', 'Fiesta Karage', 'bakso_dimsum', 'Daging paha ayam karage renyah ala Jepang dari Fiesta, juicy inside crunchy outside.', 39000, '400g', 'produk/fiesta-karage.webp', 'Terfavorit']
   ];
   
   for (var i = 0; i < samples.length; i++) {
