@@ -925,16 +925,24 @@ window.muatProdukDariSheets = function() {
         "callbackProducts",
         function(response) {
             if (response && response.status === "success" && Array.isArray(response.data) && response.data.length > 0) {
+                // Simpan backup data lokal untuk mencocokkan gambar berdasarkan ID
+                const localBackup = [...PRODUCTS_DB];
+                
                 // Map data produk secara case-insensitive
                 const mappedProducts = response.data.map(item => {
+                    const prodId = getCaseInsensitive(item, "id") || "prod-" + Math.floor(Math.random()*10000);
+                    // Cari gambar lokal berdasarkan ID produk
+                    const localItem = localBackup.find(p => p.id === prodId);
+                    const gambarPath = localItem ? localItem.gambar : (getCaseInsensitive(item, "gambar") || "https://via.placeholder.com/300x200?text=Frozen+Food");
+
                     return {
-                        id: getCaseInsensitive(item, "id") || "prod-" + Math.floor(Math.random()*10000),
+                        id: prodId,
                         nama: getCaseInsensitive(item, "nama") || "-",
                         kategori: getCaseInsensitive(item, "kategori") || "nugget_sosis",
                         deskripsi: getCaseInsensitive(item, "deskripsi") || getCaseInsensitive(item, "text_deskripsi") || "",
                         harga: Number(getCaseInsensitive(item, "harga")) || 0,
                         berat: getCaseInsensitive(item, "berat") || "-",
-                        gambar: getCaseInsensitive(item, "gambar") || "https://via.placeholder.com/300x200?text=Frozen+Food",
+                        gambar: gambarPath,
                         badge: getCaseInsensitive(item, "badge") || ""
                     };
                 });
